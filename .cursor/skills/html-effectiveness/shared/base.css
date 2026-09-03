@@ -1,0 +1,202 @@
+/* ============================================================
+ * html-effectiveness · shared base.css
+ *
+ * 用法：
+ *   方式 A（推荐，符合"单文件自包含"约束）—
+ *     生成新模板时把整个文件内容复制到 <style> 标签里。
+ *   方式 B（开发预览，模板与 skill 同目录时）—
+ *     <link rel="stylesheet" href="../skills/shared/base.css">
+ *
+ * 配色来自 thariqs.github.io/html-effectiveness 的暖色调系统。
+ * ============================================================ */
+
+/* ====== reset ====== */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+img, svg, video { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+
+/* ====== tokens ====== */
+:root {
+  /* color · primary */
+  --clay:   #D97757;
+  --slate:  #141413;
+  --ivory:  #FAF9F5;
+  --oat:    #E3DACC;
+
+  /* color · neutral */
+  --white:    #FFFFFF;
+  --gray-100: #F0EEE6;
+  --gray-300: #D1CFC5;
+  --gray-500: #87867F;
+  --gray-700: #3D3D3A;
+
+  /* color · semantic */
+  --success: #788C5D;
+  --warning: #C78E3F;
+  --danger:  #B04A4A;
+  --info:    #5C7CA3;
+
+  /* type */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+
+  /* spacing */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+
+  /* radius */
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 20px;
+
+  /* elevation */
+  --shadow-sm: 0 1px 2px rgba(20, 20, 19, 0.06);
+  --shadow-md: 0 4px 10px rgba(20, 20, 19, 0.08);
+  --shadow-lg: 0 12px 28px rgba(20, 20, 19, 0.12);
+
+  /* layout */
+  --content-max: 1100px;
+}
+
+:root[data-theme="dark"] {
+  --slate:    #FAF9F5;
+  --ivory:    #141413;
+  --white:    #1c1c1a;
+  --gray-100: #2a2a27;
+  --gray-300: #3D3D3A;
+  --gray-500: #87867F;
+  --gray-700: #BDBBB1;
+}
+
+/* ====== body ====== */
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--slate);
+  background: var(--ivory);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ====== type scale ====== */
+h1 { font-size: 32px; line-height: 1.2; font-weight: 500;
+     letter-spacing: -0.01em; margin: 0 0 var(--sp-4); }
+h2 { font-size: 24px; line-height: 1.3; font-weight: 500;
+     letter-spacing: -0.005em; margin: 0 0 var(--sp-3); }
+h3 { font-size: 18px; line-height: 1.4; font-weight: 500;
+     margin: 0 0 var(--sp-2); }
+p  { margin: 0 0 var(--sp-3); }
+small { font-size: 13px; color: var(--gray-700); }
+
+code { font-family: var(--font-mono); font-size: 0.9em;
+       background: var(--gray-100); padding: 2px 6px;
+       border-radius: var(--r-xs); }
+pre { font-family: var(--font-mono); font-size: 13px; line-height: 1.55;
+      margin: 0; padding: var(--sp-4); background: var(--gray-100);
+      border-radius: var(--r-sm); overflow: auto; }
+pre code { background: none; padding: 0; }
+
+a { color: var(--info); text-decoration: none;
+    border-bottom: 1px solid currentColor; }
+a:hover { color: var(--clay); }
+
+/* ====== layout container ====== */
+.container { max-width: var(--content-max); margin: 0 auto;
+             padding: var(--sp-7) var(--sp-5); }
+
+/* ====== buttons ====== */
+.btn {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4);
+  background: var(--slate); color: var(--white);
+  border: none; border-radius: var(--r-sm);
+  cursor: pointer; font-weight: 500;
+  transition: background 0.15s, transform 0.05s;
+}
+.btn:hover { background: #2c2c29; }
+.btn:active { transform: translateY(1px); }
+.btn.ghost { background: transparent; color: var(--slate);
+             border: 1px solid var(--gray-300); }
+.btn.ghost:hover { background: var(--gray-100); }
+.btn.primary { background: var(--clay); }
+.btn.primary:hover { background: #c46748; }
+
+/* ====== badges ====== */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 8px; border-radius: var(--r-xs);
+  font-size: 12px; font-weight: 500;
+  background: var(--gray-100); color: var(--gray-700);
+}
+.badge.success { background: rgba(120, 140, 93, 0.15); color: var(--success); }
+.badge.warning { background: rgba(199, 142, 63, 0.15); color: var(--warning); }
+.badge.danger  { background: rgba(176, 74, 74, 0.12);  color: var(--danger);  }
+.badge.info    { background: rgba(92, 124, 163, 0.12); color: var(--info);    }
+
+/* ====== cards ====== */
+.card {
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--r-md);
+  padding: var(--sp-5);
+}
+.card.elevated { box-shadow: var(--shadow-md); border-color: transparent; }
+
+/* ====== tables ====== */
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: var(--sp-3) var(--sp-4);
+         border-bottom: 1px solid var(--gray-300); }
+th { font-weight: 500; color: var(--gray-700); font-size: 13px;
+     text-transform: uppercase; letter-spacing: 0.04em; }
+tr:last-child td { border-bottom: none; }
+
+/* ====== diff lines (monospace, line-numbered) ====== */
+.diff { font-family: var(--font-mono); font-size: 12.5px; line-height: 1.55; }
+.diff .line { display: grid; grid-template-columns: 56px 1fr; gap: 0; }
+.diff .ln { color: var(--gray-500); padding: 0 12px; text-align: right;
+            background: var(--gray-100); user-select: none;
+            border-right: 1px solid var(--gray-300); }
+.diff .added   { background: rgba(120, 140, 93, 0.12); }
+.diff .removed { background: rgba(176, 74, 74, 0.10); }
+.diff .added   .ln { background: rgba(120, 140, 93, 0.20); }
+.diff .removed .ln { background: rgba(176, 74, 74, 0.15); }
+
+/* ====== timeline (incident postmortem etc.) ====== */
+.timeline { list-style: none; padding-left: 16px;
+            border-left: 2px solid var(--gray-300); margin: 0; }
+.timeline li { position: relative; padding: 8px 0 8px 24px; }
+.timeline li::before { content: ''; position: absolute; left: -25px; top: 14px;
+                       width: 12px; height: 12px; border-radius: 50%;
+                       background: var(--clay); }
+.timeline time { font-family: var(--font-mono); font-size: 13px;
+                 color: var(--gray-700); display: inline-block;
+                 width: 60px; }
+
+/* ====== severity / risk pills ====== */
+.sev { display: inline-block; padding: 2px 8px; border-radius: 4px;
+       font-size: 11px; font-weight: 600; letter-spacing: 0.04em; }
+.sev.high { background: rgba(176, 74, 74, 0.15); color: var(--danger); }
+.sev.med  { background: rgba(199, 142, 63, 0.15); color: var(--warning); }
+.sev.low  { background: rgba(135, 134, 127, 0.15); color: var(--gray-700); }
+
+/* ====== utility ====== */
+.row { display: flex; gap: var(--sp-4); align-items: center; }
+.col { display: flex; flex-direction: column; gap: var(--sp-3); }
+.muted { color: var(--gray-500); }
+.kbd { font-family: var(--font-mono); font-size: 12px;
+       padding: 2px 6px; border-radius: var(--r-xs);
+       border: 1px solid var(--gray-300); background: var(--white);
+       box-shadow: 0 1px 0 var(--gray-300); }
+
+/* ====== focus ring (a11y) ====== */
+:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
