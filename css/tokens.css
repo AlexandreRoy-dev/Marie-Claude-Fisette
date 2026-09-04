@@ -1,0 +1,41 @@
+:root {
+  --color-night: #07060b;
+  --color-ink: #100e16;
+  --color-ink-2: #17141f;
+  --color-hairline: rgba(255, 255, 255, 0.1);
+  --color-hairline-strong: rgba(255, 255, 255, 0.16);
+  --color-mauve: #c84bdb;
+  --color-mauve-deep: #9a2fb0;
+  --color-burgundy: #8b2d4a;
+  --color-burgundy-deep: #6b1e3a;
+  --color-text: #f4f0f7;
+  --color-muted: #b8afc4;
+  --color-muted-2: #8d8499;
+  --color-on-mauve: #140816;
+  --color-focus: #e9a6f5;
+  --color-danger: #f07187;
+  --font-display: "Syne", "Segoe UI", sans-serif;
+  --font-body: "Figtree", "Segoe UI", sans-serif;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --space-8: 128px;
+  --radius-s: 12px;
+  --radius-m: 20px;
+  --radius-l: 32px;
+  --radius-pill: 999px;
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --duration: 0.7s;
+  --stagger: 0.3s;
+  --shadow-island: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --max: 1180px;
+  --z-grain: 2;
+  --z-nav: 20;
+  --z-overlay: 30;
+}
+
+/* Forbidden: beige, champagne, gold, sand, cream, navy-as-brand */
