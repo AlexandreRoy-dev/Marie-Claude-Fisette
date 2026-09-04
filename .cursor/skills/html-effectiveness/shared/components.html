@@ -1,0 +1,286 @@
+<!--
+  html-effectiveness · shared/components.html
+  =============================================
+  常用 HTML 片段库。生成新输出时**复制需要的片段**进自己的 <body>，
+  然后把对应的样式从 ../shared/base.css 复制到自己的 <style>。
+
+  目录：
+    1. SVG defs（箭头 marker，必备）
+    2. Risk dots（文件风险地图）
+    3. KPI tiles（4 大数字）
+    4. Carryover items（in-review / blocked / slipped）
+    5. Timeline（事故时间线）
+    6. Pro/Con table
+    7. Tab strip
+    8. Diff line block
+    9. Copy-to-clipboard button
+   10. Light/dark theme toggle
+   11. Step number + section header
+   12. Risk table
+
+  这文件本身可以在浏览器打开看每个片段的渲染效果（含 base.css link）。
+-->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>html-effectiveness · components</title>
+<link rel="stylesheet" href="./base.css">
+<style>
+  body { padding: var(--sp-7) var(--sp-5); }
+  .container { max-width: 880px; }
+  section { margin-bottom: var(--sp-7); padding-top: var(--sp-5);
+            border-top: 1px dashed var(--gray-300); }
+  section:first-of-type { border-top: none; padding-top: 0; }
+  h2 { margin-top: 0; }
+  .demo { padding: var(--sp-4); background: var(--white);
+          border: 1px solid var(--gray-300); border-radius: var(--r-md);
+          margin-bottom: var(--sp-3); }
+  details summary { cursor: pointer; padding: 6px 0;
+                    font-family: var(--font-mono); font-size: 12px;
+                    color: var(--gray-500); }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>shared/components.html</h1>
+  <p class="muted">片段库——找到需要的那个，复制 HTML + 对应的样式（已在 base.css 内）。</p>
+
+  <!-- ========== 1. SVG defs (箭头 marker) ========== -->
+  <section id="svg-defs">
+    <h2>1 · SVG arrow marker (必备)</h2>
+    <p>每个含 SVG 流程图/数据流的页面都需要一个 <code>&lt;defs&gt;</code>。</p>
+    <div class="demo">
+      <svg viewBox="0 0 240 60" width="240" height="60">
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5"
+                  markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+          </marker>
+        </defs>
+        <rect x="20" y="15" width="60" height="30" rx="6" fill="#F0EEE6" stroke="#D1CFC5"/>
+        <text x="50" y="35" text-anchor="middle" font-size="11">A</text>
+        <rect x="160" y="15" width="60" height="30" rx="6" fill="#F0EEE6" stroke="#D1CFC5"/>
+        <text x="190" y="35" text-anchor="middle" font-size="11">B</text>
+        <path d="M 80 30 L 160 30" stroke="#141413" fill="none"
+              marker-end="url(#arr)"/>
+      </svg>
+    </div>
+    <details><summary>HTML</summary><pre><code>&lt;defs&gt;
+  &lt;marker id="arr" viewBox="0 0 10 10" refX="9" refY="5"
+          markerWidth="6" markerHeight="6" orient="auto-start-reverse"&gt;
+    &lt;path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" /&gt;
+  &lt;/marker&gt;
+&lt;/defs&gt;
+&lt;path d="..." stroke="currentColor" marker-end="url(#arr)" /&gt;</code></pre></details>
+  </section>
+
+  <!-- ========== 2. Risk dots ========== -->
+  <section id="risk-dots">
+    <h2>2 · Risk dots (PR 评审文件风险地图)</h2>
+    <div class="demo" style="display:flex; gap:24px; align-items:center;">
+      <span class="row">
+        <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--success)"></span>
+        <span>safe</span>
+      </span>
+      <span class="row">
+        <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--warning)"></span>
+        <span>worth a look</span>
+      </span>
+      <span class="row">
+        <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--danger)"></span>
+        <span>needs attention</span>
+      </span>
+    </div>
+  </section>
+
+  <!-- ========== 3. KPI tiles ========== -->
+  <section id="kpi-tiles">
+    <h2>3 · KPI tiles (状态周报 4 大数字)</h2>
+    <div class="demo" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+      <div class="card">
+        <div style="font-size:36px;font-weight:500;line-height:1;">14</div>
+        <div style="color:var(--gray-700);font-size:13px;margin-top:6px;">PRs merged</div>
+        <div style="font-size:12px;color:var(--success);margin-top:4px;">+3 vs wk10</div>
+      </div>
+      <div class="card">
+        <div style="font-size:36px;font-weight:500;line-height:1;">6</div>
+        <div style="color:var(--gray-700);font-size:13px;margin-top:6px;">Deploys</div>
+        <div style="font-size:12px;color:var(--gray-500);margin-top:4px;">±0</div>
+      </div>
+      <div class="card">
+        <div style="font-size:36px;font-weight:500;line-height:1;">1</div>
+        <div style="color:var(--gray-700);font-size:13px;margin-top:6px;">Incidents</div>
+        <div style="font-size:12px;color:var(--danger);margin-top:4px;">SEV-2 · 47m</div>
+      </div>
+      <div class="card">
+        <div style="font-size:36px;font-weight:500;line-height:1;">3</div>
+        <div style="color:var(--gray-700);font-size:13px;margin-top:6px;">Flaky fixes</div>
+        <div style="font-size:12px;color:var(--success);margin-top:4px;">99.1% pass</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4. Carryover items ========== -->
+  <section id="carryover">
+    <h2>4 · Carryover items (in-review / blocked / slipped)</h2>
+    <div class="demo" style="display:flex;flex-direction:column;gap:8px;">
+      <div class="card" style="border-left:3px solid var(--info);padding:12px 16px;">
+        <span style="font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--gray-700);font-weight:600;">In review</span>
+        <span> · Workspace export to CSV — waiting on pagination review.</span>
+      </div>
+      <div class="card" style="border-left:3px solid var(--warning);padding:12px 16px;">
+        <span style="font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--gray-700);font-weight:600;">Blocked</span>
+        <span> · SSO group mapping — blocked on staging IdP credentials.</span>
+      </div>
+      <div class="card" style="border-left:3px solid var(--gray-500);padding:12px 16px;">
+        <span style="font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--gray-700);font-weight:600;">Slipped</span>
+        <span> · Mobile push reliability — deprioritized for incident follow-up.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 5. Timeline ========== -->
+  <section id="timeline">
+    <h2>5 · Timeline (事故/post-mortem)</h2>
+    <div class="demo">
+      <ol class="timeline">
+        <li><time>14:02</time> Config <code>cfg-9a12</code> promoted to production.</li>
+        <li><time>14:06</time> Impact starts. Pool checkout queues; p95 climbs past 4s.</li>
+        <li><time>14:07</time> Alert <code>sync_5xx_rate &gt; 2%</code>; on-call (Devon) acks.</li>
+        <li><time>14:31</time> Mira spots pool-wait saturation. Pivot from app to infra.</li>
+        <li><time>14:44</time> Mitigated. Config reverted; fleet cycled. 5xx → &lt; 0.2%.</li>
+        <li><time>14:49</time> Monitors green 5min. Resolved.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ========== 6. Pro/Con table ========== -->
+  <section id="proscons">
+    <h2>6 · Pro/Con table (方案对比)</h2>
+    <div class="demo">
+      <table>
+        <thead>
+          <tr>
+            <th style="color:var(--success)">Pro</th>
+            <th style="color:var(--danger)">Con</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Single import reused across filter, command bar, board search</td>
+              <td>One more file to maintain and document</td></tr>
+          <tr><td>Trivial to unit test with fake timers</td>
+              <td>Generic <code>T</code> hides intent slightly</td></tr>
+          <tr><td>Delay is a visible, tunable argument</td>
+              <td>Still re-renders on every keystroke</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ========== 7. Tab strip ========== -->
+  <section id="tabs">
+    <h2>7 · Tab strip (特性解释器)</h2>
+    <div class="demo">
+      <div class="tabs" role="tablist" style="display:flex;gap:0;border-bottom:1px solid var(--gray-300);margin-bottom:12px;">
+        <button class="tab" role="tab" data-tab="yaml" style="padding:8px 16px;background:none;border:none;border-bottom:2px solid var(--clay);color:var(--slate);font-weight:500;cursor:pointer;">limits.yaml</button>
+        <button class="tab" role="tab" data-tab="route" style="padding:8px 16px;background:none;border:none;border-bottom:2px solid transparent;color:var(--gray-500);cursor:pointer;">route.ts</button>
+        <button class="tab" role="tab" data-tab="resp" style="padding:8px 16px;background:none;border:none;border-bottom:2px solid transparent;color:var(--gray-500);cursor:pointer;">response</button>
+      </div>
+      <pre><code>default:
+  rate: 100/min
+  burst: 120
+search.query:
+  rate: 20/min
+  burst: 40
+  key: api_key</code></pre>
+    </div>
+    <details><summary>JS</summary><pre><code>document.querySelectorAll('.tab').forEach(b =&gt; b.onclick = () =&gt; {
+  document.querySelectorAll('.tab').forEach(x =&gt; {
+    x.style.borderBottomColor = 'transparent';
+    x.style.color = 'var(--gray-500)';
+  });
+  b.style.borderBottomColor = 'var(--clay)';
+  b.style.color = 'var(--slate)';
+  document.querySelectorAll('[data-panel]').forEach(p =&gt; {
+    p.hidden = p.dataset.panel !== b.dataset.tab;
+  });
+});</code></pre></details>
+  </section>
+
+  <!-- ========== 8. Diff lines ========== -->
+  <section id="diff">
+    <h2>8 · Diff lines (代码评审)</h2>
+    <div class="demo">
+      <pre class="diff" style="margin:0;padding:0;background:none;"><div class="line"><span class="ln">12</span><span style="padding-left:8px;"> async function updateTask(patch: TaskPatch) {</span></div><div class="line removed"><span class="ln">13</span><span style="padding-left:8px;">-  return http.patch(`/tasks/${patch.id}`, patch);</span></div><div class="line added"><span class="ln">14</span><span style="padding-left:8px;">+  return http.patch(`/tasks/${patch.id}`, patch, {</span></div><div class="line added"><span class="ln">15</span><span style="padding-left:8px;">+    headers: { 'Idempotency-Key': key },</span></div><div class="line added"><span class="ln">16</span><span style="padding-left:8px;">+  });</span></div><div class="line"><span class="ln">17</span><span style="padding-left:8px;"> }</span></div></pre>
+    </div>
+  </section>
+
+  <!-- ========== 9. Copy button ========== -->
+  <section id="copy-btn">
+    <h2>9 · Copy-to-clipboard button (编辑器导出)</h2>
+    <div class="demo">
+      <button class="btn primary" onclick="copyDemo(this)">Copy result</button>
+    </div>
+    <details><summary>JS</summary><pre><code>async function copyDemo(btn) {
+  const text = '...whatever the user produced in the UI...';
+  await navigator.clipboard.writeText(text);
+  const old = btn.textContent;
+  btn.textContent = 'Copied ✓';
+  setTimeout(() =&gt; { btn.textContent = old; }, 1500);
+}</code></pre></details>
+  </section>
+
+  <!-- ========== 10. Theme toggle ========== -->
+  <section id="theme-toggle">
+    <h2>10 · Light/dark theme toggle</h2>
+    <div class="demo">
+      <button class="btn ghost" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle theme</button>
+    </div>
+    <details><summary>CSS</summary><pre><code>:root[data-theme="dark"] {
+  --slate: #FAF9F5; --ivory: #141413; --white: #1c1c1a;
+  --gray-100: #2a2a27; --gray-300: #3D3D3A; --gray-700: #BDBBB1;
+}</code></pre></details>
+  </section>
+
+  <!-- ========== 11. Step number ========== -->
+  <section id="step-no">
+    <h2>11 · Step number + section (实现计划)</h2>
+    <div class="demo" style="position:relative;padding-left:56px;">
+      <span style="position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--slate);color:var(--white);display:grid;place-items:center;font-family:var(--font-mono);font-weight:600;font-size:14px;">02</span>
+      <h3 style="margin:4px 0 8px;">Data flow</h3>
+      <p style="color:var(--gray-700);margin:0;">Solid lines = request/response path. Dashed = realtime fan-out.</p>
+    </div>
+  </section>
+
+  <!-- ========== 12. Risk table ========== -->
+  <section id="risk-table">
+    <h2>12 · Risk table (实现计划)</h2>
+    <div class="demo">
+      <table>
+        <thead><tr><th>Risk</th><th>Sev</th><th>Mitigation</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Realtime duplicate: socket append races with HTTP response.</td>
+            <td><span class="sev high">HIGH</span></td>
+            <td>Dedupe on server-assigned id; temp rows filtered on reconcile.</td>
+          </tr>
+          <tr>
+            <td>Unread counts go stale across devices.</td>
+            <td><span class="sev med">MED</span></td>
+            <td>Broadcast cursor upserts; client treats own as max(local, remote).</td>
+          </tr>
+          <tr>
+            <td>Mention false-positive on pasted markdown (<code>@media</code>, <code>@2x</code>).</td>
+            <td><span class="sev low">LOW</span></td>
+            <td>Resolve mentions against workspace members at write time.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
