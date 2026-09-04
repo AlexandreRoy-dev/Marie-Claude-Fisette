@@ -1,18 +1,16 @@
 :root {
-  --color-night: #07060b;
-  --color-ink: #100e16;
-  --color-ink-2: #17141f;
+  --color-night: #070b08;
+  --color-ink: #0e1611;
+  --color-ink-2: #121c16;
   --color-hairline: rgba(255, 255, 255, 0.1);
   --color-hairline-strong: rgba(255, 255, 255, 0.16);
-  --color-mauve: #c84bdb;
-  --color-mauve-deep: #9a2fb0;
-  --color-burgundy: #8b2d4a;
-  --color-burgundy-deep: #6b1e3a;
-  --color-text: #f4f0f7;
-  --color-muted: #b8afc4;
-  --color-muted-2: #8d8499;
-  --color-on-mauve: #140816;
-  --color-focus: #e9a6f5;
+  --color-accent: #2ad27a;
+  --color-accent-deep: #168a4e;
+  --color-on-accent: #062010;
+  --color-text: #eef6f0;
+  --color-muted: #a9b8ae;
+  --color-muted-2: #7e8d84;
+  --color-focus: #8ef0b8;
   --color-danger: #f07187;
   --font-display: "Syne", "Segoe UI", sans-serif;
   --font-body: "Figtree", "Segoe UI", sans-serif;
@@ -33,9 +31,13 @@
   --stagger: 0.3s;
   --shadow-island: 0 20px 60px rgba(0, 0, 0, 0.35);
   --max: 1180px;
+  --z-atmosphere: 0;
+  --z-content: 1;
   --z-grain: 2;
   --z-nav: 20;
   --z-overlay: 30;
+  --color-mauve: var(--color-accent);
+  --color-on-mauve: var(--color-on-accent);
 }
 
-/* Forbidden: beige, champagne, gold, sand, cream, navy-as-brand */
+/* Accent is green. Not TD, not Desjardins, not beige, not gold, not mauve. */
