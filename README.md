@@ -23,4 +23,4 @@ http://localhost:4173/
 
 ## Couleurs
 
-Nuit, blanc, mauve, bourgogne. Interdit: beige, or, champagne, sable.
+Nuit, blanc, vert forêt. Interdit: mauve, beige, or, champagne, sable.
