@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Palier — design tokens
+   Art direction: "Papier & Citron". Warm bone paper, deep ink,
+   an acid citron accent that does not read like a bank, and a deep
+   pine used for inverted sections and gradient depth.
+   Swap the six colour values below to change the whole site.
+------------------------------------------------------------------ */
+
+@theme {
+  --color-paper: #f6f3ed;
+  --color-paper-warm: #efeae0;
+  --color-ink: #14120f;
+  --color-ink-soft: #57524a;
+  --color-citron: #d9f24b;
+  --color-pine: #0e3b34;
+  --color-pine-deep: #072520;
+  --color-coral: #ff7a4d;
+  --color-line: #14120f1a;
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+
+  /* Fluid type scale. Every step is clamp()ed so nothing needs a breakpoint. */
+  --text-eyebrow: 0.78rem;
+  --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --text-lede: clamp(1.15rem, 1.05rem + 0.5vw, 1.5rem);
+  --text-h3: clamp(1.25rem, 1.1rem + 0.7vw, 1.6rem);
+  --text-h2: clamp(2rem, 1.5rem + 2.2vw, 3.5rem);
+  --text-h1: clamp(2.75rem, 1.6rem + 5.4vw, 7rem);
+  --text-mega: clamp(4rem, 1rem + 14vw, 14rem);
+
+  --ease-fluid: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --radius-blob: 42% 58% 61% 39% / 47% 43% 57% 53%;
+}
+
+/* ------------------------------------------------------------------
+   Base
+------------------------------------------------------------------ */
+
+html {
+  /* Lenis handles smooth scroll. Native smooth would fight it. */
+  scroll-behavior: auto;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-citron);
+  color: var(--color-ink);
+}
+
+/* Visible, branded focus ring. Never removed. */
+:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.on-pine :focus-visible {
+  outline-color: var(--color-citron);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-h1);
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+h3 {
+  font-size: var(--text-h3);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* ------------------------------------------------------------------
+   Motion primitives
+   Elements start hidden and are revealed by GSAP. If JS never runs,
+   the .no-js rule below makes everything visible so the page is not
+   a blank screen.
+------------------------------------------------------------------ */
+
+[data-reveal] {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Belt and braces for the JS-disabled case: `scripting: none` covers browsers
+   that support it, the <noscript> block in the layout covers the rest. */
+@media (scripting: none) {
+  [data-reveal],
+  [data-reveal-line] > span > span {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+[data-reveal-line] > span {
+  display: block;
+  overflow: hidden;
+}
+
+[data-reveal-line] > span > span {
+  display: block;
+  will-change: transform;
+}
+
+/* ------------------------------------------------------------------
+   Fluid atmosphere — three slowly drifting blobs behind the content.
+   Transform and opacity only, so it stays off the main thread's
+   layout path.
+------------------------------------------------------------------ */
+
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  contain: strict;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  /* Deliberately faint. This layer is atmosphere, not decoration: anything
+     stronger fights the body copy for contrast. */
+  opacity: 0.16;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .blob {
+    filter: blur(60px);
+    opacity: 0.12;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Reduced motion: freeze the atmosphere, reveal everything.
+------------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal],
+  [data-reveal-line] > span > span {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .blob {
+    animation: none !important;
+  }
+}
