@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Lines } from "@/components/Lines";
 import { MagneticLink } from "@/components/MagneticLink";
+import { PortraitBlob } from "@/components/PortraitBlob";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -47,26 +47,7 @@ export default function AProposPage() {
 
       <section className="px-6 pb-24">
         <div className="mx-auto grid max-w-6xl items-start gap-14 md:grid-cols-[0.8fr_1fr] md:gap-20">
-          <div data-reveal className="relative mx-auto w-full max-w-sm">
-            <div
-              className="relative overflow-hidden bg-paper-warm"
-              style={{ borderRadius: "var(--radius-blob)" }}
-            >
-              <Image
-                src="/img/marie-claude-fisette.webp"
-                alt={`${SITE.broker}, ${SITE.brokerTitle}`}
-                width={1250}
-                height={2048}
-                sizes="(max-width: 768px) 80vw, 380px"
-                className="h-auto w-full object-cover"
-                priority
-              />
-            </div>
-            <span
-              aria-hidden="true"
-              className="absolute -bottom-8 -right-6 -z-10 h-44 w-44 rounded-full bg-coral opacity-50 blur-2xl"
-            />
-          </div>
+          <PortraitBlob accent="coral" priority />
 
           <div className="space-y-6 text-lede text-ink-soft">
             <p data-reveal>

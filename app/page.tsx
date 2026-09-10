@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Lines } from "@/components/Lines";
 import { MagneticLink } from "@/components/MagneticLink";
+import { PortraitBlob } from "@/components/PortraitBlob";
 import { ProcessScene } from "@/components/ProcessScene";
 import { SITE } from "@/lib/site";
 
@@ -195,28 +195,7 @@ export default function Home() {
       {/* ----------------------------------------------------------------- Her */}
       <section className="px-6 py-24 md:py-32">
         <div className="mx-auto grid max-w-6xl items-center gap-14 md:grid-cols-[0.85fr_1fr] md:gap-20">
-          <div data-reveal className="relative mx-auto w-full max-w-sm">
-            {/* Blob-masked portrait: the fluid motif, applied once, on the one
-                photograph on the page. */}
-            <div
-              className="relative overflow-hidden bg-paper-warm"
-              style={{ borderRadius: "var(--radius-blob)" }}
-            >
-              <Image
-                src="/img/marie-claude-fisette.webp"
-                alt={`${SITE.broker}, ${SITE.brokerTitle}`}
-                width={1250}
-                height={2048}
-                sizes="(max-width: 768px) 80vw, 380px"
-                className="h-auto w-full object-cover"
-                priority={false}
-              />
-            </div>
-            <span
-              aria-hidden="true"
-              className="absolute -bottom-6 -left-6 -z-10 h-40 w-40 rounded-full bg-citron opacity-60 blur-2xl"
-            />
-          </div>
+          <PortraitBlob accent="citron" />
 
           <div>
             <p
