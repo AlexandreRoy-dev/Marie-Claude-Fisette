@@ -38,6 +38,14 @@ export const metadata: Metadata = {
     description:
       "Achat d’une première propriété, achat, renouvellement, refinancement. Analyse de votre capacité, puis comparaison de plusieurs prêteurs.",
   },
+  twitter: {
+    // No twitter-image file: X falls back to og:image, so a second copy of the
+    // same card would only add bytes.
+    card: "summary_large_image",
+    title: `${SITE.name} · Courtière hypothécaire résidentielle en Estrie`,
+    description:
+      "Achat d’une première propriété, achat, renouvellement, refinancement. Analyse de votre capacité, puis comparaison de plusieurs prêteurs.",
+  },
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
 };
