@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   Palier — design tokens
+   Palier design tokens
    Art direction: "Papier & Citron". Warm bone paper, deep ink,
    an acid citron accent that does not read like a bank, and a deep
    pine used for inverted sections and gradient depth.
@@ -134,7 +134,7 @@ p {
 }
 
 /* ------------------------------------------------------------------
-   Fluid atmosphere — three slowly drifting blobs behind the content.
+   Fluid atmosphere: three slowly drifting blobs behind the content.
    Transform and opacity only, so it stays off the main thread's
    layout path.
 ------------------------------------------------------------------ */

@@ -3,7 +3,7 @@ name: quebec-courtier-hypothecaire
 description: Write and review marketing copy for a Quebec mortgage broker (courtier hypothecaire) so it survives AMF scrutiny. Covers the broker-is-not-a-lender distinction, the ban on advertised rates and approval promises, required firm and certificate mentions, compensation-disclosure boundaries, and fr-CA typography. Use whenever writing, editing, or reviewing French copy, headings, FAQs, legal pages, form labels, or metadata for a mortgage brokerage site in Quebec.
 ---
 
-# Courtier hypothécaire au Québec — copy and compliance
+# Courtier hypothécaire au Québec: copy and compliance
 
 Mortgage brokering in Quebec is regulated by the **Autorité des marchés financiers (AMF)**, not the OACIQ. The governing texts are the *Loi sur la distribution de produits et services financiers* (LDPSF, chapitre D-9.2) and the *Règlement sur l'exercice des activités des représentants* (D-9.2, r. 10).
 
@@ -11,7 +11,7 @@ A marketing site is "représentation" and "sollicitation de clientèle". Everyth
 
 ## The one rule that governs all copy
 
-**Faire des représentations qui ne soient ni fausses ni trompeuses.** Every claim on the site must be true and must not create an impression the broker cannot deliver. Most compliance failures on broker websites are not exotic — they are ordinary marketing enthusiasm.
+**Faire des représentations qui ne soient ni fausses ni trompeuses.** Every claim on the site must be true and must not create an impression the broker cannot deliver. Most compliance failures on broker websites are not exotic. They are ordinary marketing enthusiasm.
 
 ## Hard bans
 
@@ -39,11 +39,11 @@ Never write any of these, in any language, anywhere on the site:
 
 Lender and network logos are reference only. Do not place `Intelligence Hypothécaire` or `Groupe Financier Signature` marks in the header. The affiliation is stated as **text** in the footer and legal page.
 
-## Compensation and lender disclosure — what belongs on a website
+## Compensation and lender disclosure: what belongs on a website
 
-Articles 9.3 to 9.6 of D-9.2, r. 10 require **written** disclosure to the client, before services are rendered, of how the broker is paid — including whether the lender pays her, and, per art. 9.6, whether any single lender accounted for more than 50% of her brokered loans in the previous 12 months. Article 58.3 requires disclosing lender names before proposing a loan; 58.4 requires disclosing business relationships with the lender.
+Articles 9.3 to 9.6 of D-9.2, r. 10 require **written** disclosure to the client, before services are rendered, of how the broker is paid, including whether the lender pays her, and, per art. 9.6, whether any single lender accounted for more than 50% of her brokered loans in the previous 12 months. Article 58.3 requires disclosing lender names before proposing a loan; 58.4 requires disclosing business relationships with the lender.
 
-These are **client-file obligations, not website obligations.** Do not attempt to satisfy them with a web page, and never publish a specific percentage or lender-volume figure — it changes and would become false.
+These are **client-file obligations, not website obligations.** Do not attempt to satisfy them with a web page, and never publish a specific percentage or lender-volume figure, because it changes and would become false.
 
 What the website *should* do is set an honest expectation:
 
@@ -65,10 +65,11 @@ Get these right or the copy reads as machine-translated:
 - **French quotation marks** `« … »` with inner spacing, not `" "`.
 - **Percent** with a no-break space: `20&nbsp;%`, not `20%`.
 - **Numbers** use a space as thousands separator: `450 000 $`. Currency symbol **after** the amount with a no-break space.
+- **Never an em dash `—`**, in any language, anywhere: copy, headings, metadata, page titles, code comments. Same for an en dash `–` used as punctuation. Rewrite the sentence with a comma, a colon, parentheses, or a full stop rather than swapping in a lookalike character. Use `·` as a separator between a page name and the site name. Ranges keep a plain hyphen: `2-3 semaines`.
 - **Dates** lowercase month: `3 septembre 2026`.
 - **Phone** `819 272-8422` is the Quebec convention. `(819) 272-8422` is acceptable but pick one and be consistent.
 - **Titles/headings** use sentence case, not Title Case. `Comment se déroule un dossier`, not `Comment Se Déroule Un Dossier`.
-- Avoid anglicisms: `versement` not `paiement mensuel` when meaning the installment, `mise de fonds` not `down payment`, `préqualification`/`préautorisation` handled carefully — prefer `analyse de capacité`.
+- Avoid anglicisms: `versement` not `paiement mensuel` when meaning the installment, `mise de fonds` not `down payment`, `préqualification`/`préautorisation` handled carefully, prefer `analyse de capacité`.
 
 ## Residential vocabulary that is safe and accurate
 
@@ -78,14 +79,14 @@ Get these right or the copy reads as machine-translated:
 - `refinancement`
 - `analyse de capacité d’emprunt`
 - `mise de fonds`
-- `assurance prêt hypothécaire` (SCHL / Sagen / Canada Guaranty — do not promise eligibility)
-- `taux fixe` / `taux variable` — may be explained, never quoted
+- `assurance prêt hypothécaire` (SCHL / Sagen / Canada Guaranty, do not promise eligibility)
+- `taux fixe` / `taux variable`, may be explained, never quoted
 - `amortissement`
 - `simulation` / `scénarios`
 
 ## Voice
 
-Direct, warm, plain. Short sentences. Speak to one person as `vous`. Explain the mechanism instead of asserting the benefit — a broker's advantage is structural (she shops multiple lenders) and can be stated factually without superlatives.
+Direct, warm, plain. Short sentences. Speak to one person as `vous`. Explain the mechanism instead of asserting the benefit. A broker's advantage is structural (she shops multiple lenders) and can be stated factually without superlatives.
 
 Per project rule: **no slogan headlines and no stacked punchline sequences.** Headings describe the section in one plain sentence.
 
@@ -98,5 +99,5 @@ Before shipping any page, confirm:
 3. "Courtière hypothécaire" used correctly; the not-a-lender distinction appears above the fold.
 4. Intelligence Hypothécaire / Groupe Financier Signature stated as text in footer and legal page.
 5. Every statistic is one the client can substantiate, or it is gone.
-6. `lang="fr-CA"`; narrow no-break spaces before `:` `?` `!`; `’` throughout; accented capitals.
+6. `lang="fr-CA"`; narrow no-break spaces before `:` `?` `!`; `’` throughout; accented capitals; zero em dashes.
 7. Form consent language is explicit about being contacted, and the privacy/legal page exists and is linked.

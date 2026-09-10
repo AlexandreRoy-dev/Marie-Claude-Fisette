@@ -24,8 +24,8 @@ const instrument = Instrument_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} — Courtière hypothécaire résidentielle en Estrie`,
-    template: `%s — ${SITE.name}`,
+    default: `${SITE.name} · Courtière hypothécaire résidentielle en Estrie`,
+    template: `%s · ${SITE.name}`,
   },
   description:
     "Marie-Claude Fisette, courtière hypothécaire résidentielle à Sherbrooke. Achat d’une première propriété, achat, renouvellement et refinancement. Je compare les prêteurs pour vous : je ne suis pas un prêteur.",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     locale: "fr_CA",
     siteName: SITE.name,
     url: SITE.url,
-    title: `${SITE.name} — Courtière hypothécaire résidentielle en Estrie`,
+    title: `${SITE.name} · Courtière hypothécaire résidentielle en Estrie`,
     description:
       "Achat d’une première propriété, achat, renouvellement, refinancement. Analyse de votre capacité, puis comparaison de plusieurs prêteurs.",
   },

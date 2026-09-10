@@ -9,22 +9,22 @@ alwaysApply: true
 
 Many installed skills claim authority over visual design. When they conflict, follow this order and stop at the first one that answers the question:
 
-1. **`quebec-courtier-hypothecaire`** — absolute authority over all French copy, claims, headings, and legal wording. Compliance overrides aesthetics, always.
-2. **`awwwards-animations`** — authority over motion: Lenis, GSAP, ScrollTrigger, reveals, pinning, kinetic type, magnetic hover, 60fps rules.
-3. **`web-design-engineer`** — authority over layout craft, design-system construction, and visual refinement.
-4. **`design-taste-frontend`** — authority over avoiding templated output and reading the brief.
-5. **`taste-skill`** — only when grounding art direction against a specific reference URL.
-6. **`accessibility` / `semantic-html-css` / `core-web-vitals`** — veto power. These can override anything above on correctness grounds, never on taste grounds.
+1. **`quebec-courtier-hypothecaire`**: absolute authority over all French copy, claims, headings, and legal wording. Compliance overrides aesthetics, always.
+2. **`awwwards-animations`**: authority over motion, meaning Lenis, GSAP, ScrollTrigger, reveals, pinning, kinetic type, magnetic hover, 60fps rules.
+3. **`web-design-engineer`**: authority over layout craft, design-system construction, and visual refinement.
+4. **`design-taste-frontend`**: authority over avoiding templated output and reading the brief.
+5. **`taste-skill`**: only when grounding art direction against a specific reference URL.
+6. **`accessibility` / `semantic-html-css` / `core-web-vitals`**: veto power. These can override anything above on correctness grounds, never on taste grounds.
 
 Do **not** load `high-end-visual-design`, `premium-frontend-ui`, `using-ui-stack`, or `design-systems` for this project. They overlap the skills above and produce incoherent results when stacked.
 
-## Fixed stack — do not substitute
+## Fixed stack, do not substitute
 
 - Next.js App Router, TypeScript, React 19
 - Tailwind v4, tokens as CSS custom properties in `app/globals.css`
 - `gsap`, `@gsap/react`, `lenis`
 - Zod for the lead route
-- Deploy target: Vercel
+- Deploy target: OVH VPS at 158.69.1.173, `mcf-fisette` systemd unit on port 3001 behind nginx. Next `output: "standalone"`. Redeploy with `scripts/vps-redeploy.sh`.
 
 No component library. No shadcn/ui, no Radix, no Framer Motion. Motion is GSAP only, so there is one animation clock.
 
@@ -38,6 +38,14 @@ No component library. No shadcn/ui, no Radix, no Framer Motion. Motion is GSAP o
 - `prefers-reduced-motion` is honored everywhere: Lenis never initializes, entrances snap to end state, ambient motion freezes.
 - Lead submissions go to `process.env.GHL_WEBHOOK_URL`, server-side only. The URL must never reach the client bundle.
 - No slogan headlines. No stacked parallel short sentences as a heading. Headings describe the section plainly.
+
+## Punctuation
+
+Never use an em dash (`—`) anywhere: not in page copy, not in metadata or page titles, not in code comments, not in commit messages. This applies to en dashes (`–`) used as sentence punctuation too.
+
+Rewrite instead of substituting a visually similar character. Use a comma, a colon, parentheses, or two sentences, whichever the sentence actually wants. In fr-CA a colon takes a narrow no-break space before it (`&#8239;`). Where a separator is needed between a page name and the site name, use `·`, which is already the site's separator.
+
+Ranges keep the plain hyphen: `2-3 semaines`.
 
 ## Contact facts
 
