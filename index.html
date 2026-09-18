@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="assets/css/plugins/nice-select.css">
   <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/work.css?v=cta-white">
+  <link rel="stylesheet" href="assets/css/work.css?v=contact-form">
   <script src="assets/js/plugins/jquery-3-7-1.min.js"></script>
 </head>
 <body>
@@ -1183,34 +1183,115 @@
 </div>
 <!--===== BLOG AREA ENDS =======-->
 
-<!--===== CTA AREA STARTS =======-->
-<div class="cta2-section-area" id="contact">
+<!--===== CONTACT AREA STARTS =======-->
+<section class="contact-section-area" id="contact">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="cta-bg-area">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
-              <div class="heading2">
-                <h2>Un appel de vingt minutes pour savoir où vous en êtes</h2>
-              </div>
+    <div class="contact-panel">
+      <div class="contact-panel__intro" data-aos="fade-up" data-aos-duration="700">
+        <h2>Réserver un appel</h2>
+        <p>Remplissez ce formulaire. L’équipe vous revient en un jour ouvrable. Rien à préparer&#8239;: le premier appel sert à comprendre votre projet.</p>
+        <dl class="contact-facts">
+          <div>
+            <dt>Téléphone</dt>
+            <dd><a href="tel:+18192728422">819 272-8422</a></dd>
+          </div>
+          <div>
+            <dt>Courriel</dt>
+            <dd><a href="mailto:mc.fisette@groupeih.ca">mc.fisette@groupeih.ca</a></dd>
+          </div>
+          <div>
+            <dt>Territoire</dt>
+            <dd>Sherbrooke et l’Estrie, et ailleurs au Québec selon le dossier.</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="contact-panel__form" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+        <div id="contact-success" class="contact-success" hidden>
+          <h3>Votre demande est reçue</h3>
+          <p>L’équipe vous revient en un jour ouvrable, par le moyen que vous avez choisi. Si c’est urgent, téléphonez au <a href="tel:+18192728422">819 272-8422</a>.</p>
+        </div>
+
+        <form id="contact-form" class="contact-form" novalidate>
+          <div id="form-status" class="contact-form__status" role="alert" tabindex="-1" hidden></div>
+
+          <div class="contact-form__row">
+            <div class="contact-field">
+              <label for="firstName">Prénom</label>
+              <input id="firstName" name="firstName" type="text" autocomplete="given-name" required>
             </div>
-            <div class="col-lg-1"></div>
-            <div class="col-lg-5">
-              <div class="cta-form-area">
-                <form action="mailto:mc.fisette@groupeih.ca" method="post" enctype="text/plain">
-                  <input type="email" name="courriel" placeholder="Votre courriel" required>
-                  <button type="submit">Écrire <i class="fa-solid fa-angle-right"></i></button>
-                </form>
-              </div>
+            <div class="contact-field">
+              <label for="lastName">Nom</label>
+              <input id="lastName" name="lastName" type="text" autocomplete="family-name" required>
             </div>
           </div>
-        </div>
+
+          <div class="contact-form__row">
+            <div class="contact-field">
+              <label for="email">Courriel</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="contact-field">
+              <label for="phone">Téléphone</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="819 272-8422" required>
+            </div>
+          </div>
+
+          <div class="contact-field">
+            <label for="projectType">Votre projet</label>
+            <select id="projectType" name="projectType" class="js-native-select" required>
+              <option value="" disabled selected>Choisir…</option>
+              <option value="achat">Achat d’une propriété</option>
+              <option value="renouvellement">Renouvellement</option>
+              <option value="refinancement">Refinancement</option>
+              <option value="capacite">Capacité d’emprunt</option>
+              <option value="autre">Autre / je ne sais pas encore</option>
+            </select>
+          </div>
+
+          <div class="contact-field">
+            <label for="timeline">Votre échéance</label>
+            <select id="timeline" name="timeline" class="js-native-select" required>
+              <option value="" disabled selected>Choisir…</option>
+              <option value="maintenant">Le plus tôt possible</option>
+              <option value="3mois">Dans les 3 prochains mois</option>
+              <option value="6mois">Dans 3 à 6 mois</option>
+              <option value="explore">J’explore, sans échéance</option>
+            </select>
+          </div>
+
+          <fieldset class="contact-field">
+            <legend>Comment vous joindre</legend>
+            <div class="contact-choices">
+              <label><input type="radio" name="contactMethod" value="telephone" checked> Téléphone</label>
+              <label><input type="radio" name="contactMethod" value="courriel"> Courriel</label>
+              <label><input type="radio" name="contactMethod" value="texte"> Message texte</label>
+            </div>
+          </fieldset>
+
+          <div class="contact-field">
+            <label for="message">Précisions (facultatif)</label>
+            <textarea id="message" name="message" rows="4" placeholder="Ce que vous voulez acheter, une date à respecter, une question précise…"></textarea>
+          </div>
+
+          <div class="contact-honeypot" aria-hidden="true">
+            <label for="website">Site web</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <label class="contact-consent">
+            <input type="checkbox" name="consent" value="oui" required>
+            <span>J’accepte que le cabinet me contacte au sujet de cette demande. Vos renseignements servent uniquement à y répondre et ne sont jamais vendus.</span>
+          </label>
+
+          <button type="submit" class="contact-submit">Envoyer ma demande</button>
+          <p class="contact-note">Aucun taux ni aucune approbation ne sont garantis par ce formulaire. Il sert à organiser un premier appel.</p>
+        </form>
       </div>
     </div>
   </div>
-</div>
-<!--===== CTA AREA ENDS =======-->
+</section>
+<!--===== CONTACT AREA ENDS =======-->
 
 <!--===== FOOTER AREA STARTS =======-->
 <div class="vl-footer2-section-area">
@@ -1314,6 +1395,7 @@
 <script src="assets/js/plugins/circle-progress.js"></script>
 <script src="assets/js/plugins/swiper.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/contact-form.js"></script>
 <script>
 (function () {
   var header = document.getElementById("vl-header-sticky");
@@ -1325,7 +1407,7 @@
 
   var wrap = document.querySelector(".progress-wrap");
   if (!wrap) return;
-  var dark = ".project2-section-area, .vl-footer2-section-area, .cta-bg-area";
+  var dark = ".project2-section-area, .vl-footer2-section-area";
 
   function update() {
     var box = wrap.getBoundingClientRect();
