@@ -1,6 +1,8 @@
-# Cabinet
+# Cabinet Hypo
 
-Site statique. Nom de build: **Cabinet**. Transférable: pas de nom de personne, pas de ville.
+Site statique one-page. Marque de travail : **Cabinet Hypo**. Courtage hypothécaire résidentiel, Sherbrooke et l’Estrie.
+
+Le cabinet de courtage licencié reste Intelligence Hypothécaire. Cabinet Hypo est la marque du site, pas le permis AMF.
 
 ## Domaines
 
@@ -9,9 +11,7 @@ Site statique. Nom de build: **Cabinet**. Transférable: pas de nom de personne,
 
 `cabinet.ca` et `lecabinet.ca` sont pris. `CNAME` = `cabinethypo.ca`.
 
-`preapprobation.ca` est Roy Marketing. Ce n'est pas le nom de cette firme.
-
-Le cabinet de courtage licencié reste Intelligence Hypothécaire. "Cabinet" ici est la marque du site, pas le permis AMF.
+`preapprobation.ca` est Roy Marketing. Ce n’est pas le nom de cette firme.
 
 ## Lancer en local
 
@@ -23,4 +23,4 @@ http://localhost:4173/
 
 ## Couleurs
 
-Nuit, blanc, vert forêt. Interdit: mauve, beige, or, champagne, sable.
+Magenta `#8E0078` / `#5A004C` / `#C200A8` sur fond clair. Titres en phrase, français du Québec (`fr-CA`).
