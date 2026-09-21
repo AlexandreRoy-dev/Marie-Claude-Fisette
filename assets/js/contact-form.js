@@ -92,7 +92,7 @@
       Échéance: labels[timeline] || timeline,
       "Moyen de contact": labels[contactMethod] || contactMethod,
       Message: message,
-      _subject: "Demande d’appel · Cabinet Hypo",
+      _subject: "Demande d’appel · Marie-Claude Fisette",
       _template: "table",
       _captcha: "false"
     };
@@ -114,7 +114,7 @@
         success.hidden = false;
       })
       .catch(function () {
-        var subject = encodeURIComponent("Demande d’appel · Cabinet Hypo");
+        var subject = encodeURIComponent("Demande d’appel · Marie-Claude Fisette");
         var body = encodeURIComponent(
           [
             "Prénom: " + firstName,

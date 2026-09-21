@@ -284,11 +284,18 @@ img[src*="work-icon3.svg"] {
   display: inline-block;
   color: var(--ztc-text-text-2);
   font-family: var(--ztc-family-font1);
-  font-size: 22px;
+  font-size: 17px;
   font-weight: var(--ztc-weight-semibold);
-  line-height: 1;
+  line-height: 1.15;
   letter-spacing: -0.03em;
-  white-space: nowrap;
+  white-space: normal;
+  max-width: 11.5em;
+}
+
+@media (min-width: 1400px) {
+  .brand-mark {
+    font-size: 19px;
+  }
 }
 
 .vl-footer2-section-area .brand-mark,
