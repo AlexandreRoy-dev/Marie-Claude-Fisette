@@ -1,6 +1,6 @@
 # Marie-Claude Fisette
 
-Site statique one-page. Courtage hypothécaire résidentiel, Sherbrooke et l’Estrie.
+Site statique one-page. Courtage hypothécaire résidentiel, partout au Québec.
 
 Marie-Claude Fisette est courtière hypothécaire. Le courtage est exercé par l’entremise d’Intelligence Hypothécaire, du réseau Groupe Financier Signature.
 
