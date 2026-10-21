@@ -1,0 +1,4 @@
+{
+  "siteUrl": "https://alexandreroy-dev.github.io/Marie-Claude-Fisette",
+  "note": "Seule valeur à changer pour l'adresse canonique, Open Graph, le JSON-LD, robots.txt et sitemap.xml. Sans barre finale. Quand le domaine de Marie-Claude Fisette sera décidé, remplacer siteUrl par https://ce-domaine puis lancer : node scripts/apply-site-url.mjs. Ajouter aussi le CNAME et le domaine dans les réglages GitHub Pages. Ne pas inventer le domaine avant qu'il soit choisi."
+}

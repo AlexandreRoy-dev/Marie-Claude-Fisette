@@ -1,3 +1,5 @@
+# Adresse de base : site.config.json
+# Mettre à jour avec : node scripts/apply-site-url.mjs
 User-agent: *
 Allow: /
 
