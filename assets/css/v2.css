@@ -1,0 +1,69 @@
+/* Refonte v2 : plus de magenta, plus de caractère. Couleurs pleines seulement. */
+:root{--mag:#8E0078;--mag-d:#6E005D;--mag-l:#F3D9EE;--dark:#1D1A1C}
+h2 em,h1 em{font-style:italic;color:var(--mag)}
+.eyebrow{color:var(--mag)}
+/* boutons magenta */
+.btn--solid{background:var(--mag);border-color:var(--mag);color:#fff}
+.btn--solid:hover{background:var(--dark)!important;border-color:var(--dark)!important;color:#fff}
+.btn--line{border-color:var(--mag);color:var(--mag)}
+.btn--line:hover{background:var(--mag)!important;color:#fff!important}
+.contact-submit{background:var(--mag);border-color:var(--mag)}.contact-submit:hover{background:var(--dark);border-color:var(--dark)}
+/* hero magenta plein */
+.hero--mag{background:var(--mag);color:#fff;border-bottom:0;padding:88px 0 112px}
+.hero--mag h1{color:#fff;font-size:clamp(52px,7.4vw,112px);line-height:.96;letter-spacing:-.02em;margin-bottom:36px}
+.hero--mag .eyebrow{color:#fff;opacity:.85}
+.hero--mag .lead{color:#fff;opacity:.92}
+.hero--mag .btn--solid{background:#fff;border-color:#fff;color:var(--mag)}
+.hero--mag .btn--solid:hover{background:var(--dark)!important;border-color:var(--dark)!important;color:#fff!important}
+.hero--mag .btn--line{border-color:#fff;color:#fff}
+.hero--mag .btn--line:hover{background:#fff!important;color:var(--mag)!important}
+.hero--mag .hero__facts{border-top-color:rgba(255,255,255,.35);color:#fff}
+.hero--mag .hero__facts span{color:#fff;opacity:.7}
+.hero--mag .hero__photo{outline:1px solid rgba(255,255,255,.4);outline-offset:14px}
+/* cartes */
+.card{border-top:3px solid transparent}
+.card:hover{border-top-color:var(--mag)!important}
+.card__num{color:var(--mag)}
+/* bande foncée */
+.band--dark{background:var(--dark);border:0;color:#fff}
+.band--dark .band__caption p{color:#fff}
+.band--dark .band__caption p.eyebrow{color:var(--mag-l)}
+.band--dark .band__caption{border-left:6px solid var(--mag)}
+.band--dark .btn--line{border-color:#fff;color:#fff}
+.band--dark .btn--line:hover{background:#fff!important;color:var(--dark)!important;border-color:#fff}
+/* étapes : grands chiffres magenta */
+.steps{border-top:2px solid var(--mag)}
+.steps li{grid-template-columns:120px 1fr;padding:40px 0}
+.steps__n{font-size:clamp(56px,5.4vw,80px);color:var(--mag);line-height:.85;font-weight:500}
+/* bande photo pleine largeur */
+.strip{height:clamp(260px,34vw,460px);overflow:hidden;border-top:6px solid var(--mag)}
+.strip img{width:100%;height:100%;object-fit:cover;object-position:50% 72%;display:block}
+/* sections magenta */
+.section--mag{background:var(--mag);color:#fff}
+.section--mag h2,.section--mag .eyebrow{color:#fff}
+.section--mag .eyebrow{opacity:.85}
+.section--mag .cards{border-color:rgba(255,255,255,.25)}
+.section--mag .card{background:#fff;color:var(--dark)}
+.section--mag .card h3{color:var(--dark)}
+.section--mag .card:hover{border-top-color:var(--dark)!important}
+.section--contact .contact__side,.section--contact .contact__side h2,.section--contact .lead{color:#fff}
+.section--contact .contact__info{border-top-color:rgba(255,255,255,.35)}
+.section--contact .contact__info div{border-bottom-color:rgba(255,255,255,.35)}
+.section--contact .contact__info dt{color:#fff;opacity:.7}
+.section--contact .contact__info a,.section--contact .contact__info dd{color:#fff}
+.section--contact .contact__form{border:0}
+.section--contact .contact__photo{outline:1px solid rgba(255,255,255,.4);outline-offset:12px}
+/* À propos et FAQ */
+.pull{border-left:4px solid var(--mag);color:var(--mag)}
+.faq{border-top:2px solid var(--mag)}
+.faq summary:hover{color:var(--mag)}
+#questions .side-photo{margin-top:8px}
+/* pied de page foncé */
+.footer{background:var(--dark);color:#d9d3d6;border-top:6px solid var(--mag)}
+.footer a,.footer span,.footer .muted,.footer p{color:#d9d3d6}
+.footer a:hover{color:#fff}
+.footer h3{color:#fff;opacity:.6}
+.footer .brand__name{color:#fff}
+.footer__grid{border-bottom-color:rgba(255,255,255,.15)}
+.footer__legal,.footer__legal p{color:#a9a1a6}
+@media (max-width:900px){.hero--mag{padding:40px 0 72px}.steps li{grid-template-columns:80px 1fr}.hero--mag .hero__photo{outline-offset:8px}}
