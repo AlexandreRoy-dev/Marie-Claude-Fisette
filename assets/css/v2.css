@@ -67,3 +67,24 @@ h2 em,h1 em{font-style:italic;color:var(--mag)}
 .footer__grid{border-bottom-color:rgba(255,255,255,.15)}
 .footer__legal,.footer__legal p{color:#a9a1a6}
 @media (max-width:900px){.hero--mag{padding:40px 0 72px}.steps li{grid-template-columns:80px 1fr}.hero--mag .hero__photo{outline-offset:8px}}
+/* v3 : fonds foncés, magenta en accent. Un seul bandeau magenta plein (engagements). */
+:root{--mag-on-dark:#E254C6}
+.hero--dark{background:var(--dark)}
+.hero--dark h1 em{color:var(--mag-on-dark);font-style:italic}
+.hero--dark .eyebrow{color:var(--mag-on-dark);opacity:1}
+.hero--dark .btn--solid{background:var(--mag);border-color:var(--mag);color:#fff}
+.hero--dark .btn--solid:hover{background:#fff!important;border-color:#fff!important;color:var(--dark)!important}
+.hero--dark .btn--line:hover{background:#fff!important;color:var(--dark)!important}
+.hero--dark .hero__facts{border-top:2px solid var(--mag)}
+.hero--dark .hero__photo{outline:2px solid var(--mag);outline-offset:14px}
+.band--dark{border-top:1px solid #2e292c}
+.band--dark .band__caption p.eyebrow{color:var(--mag-on-dark)}
+.section--dark{background:var(--dark);color:#fff}
+.section--dark h2{color:#fff}
+.section--dark h2 em{color:var(--mag-on-dark)}
+.section--dark .eyebrow{color:var(--mag-on-dark)}
+.section--dark.section--contact .contact__info{border-top:2px solid var(--mag)}
+.section--dark.section--contact .contact__photo{outline:2px solid var(--mag)}
+.section--dark .contact__info a:hover{color:var(--mag-on-dark)}
+.section--dark + .footer{border-top:1px solid #2e292c}
+.footer{border-top:6px solid var(--mag)}
