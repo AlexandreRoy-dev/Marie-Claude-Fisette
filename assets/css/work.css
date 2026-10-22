@@ -27,11 +27,11 @@
 
 /* Magenta accents: less pink, more purple. */
 :root {
-  --ztc-text-text-4: #8E0078;
-  --ztc-text-text-5: #5A004C;
+  --ztc-text-text-4: #5B004D;
+  --ztc-text-text-5: #3F0035;
   --ztc-text-text-6: #C200A8;
   --ztc-bg-bg-3: #C200A8;
-  --ztc-bg-bg-4: #5A004C;
+  --ztc-bg-bg-4: #3F0035;
   --ztc-bg-bg-5: #C200A8;
 }
 
@@ -422,11 +422,11 @@ img[src*="work-icon3.svg"] {
 
 .progress-wrap::after,
 .progress-wrap::before {
-  color: #5A004C;
+  color: #3F0035;
 }
 
 .progress-wrap svg.progress-circle path {
-  stroke: #5A004C;
+  stroke: #3F0035;
 }
 
 .progress-wrap.is-on-purple {
@@ -559,7 +559,7 @@ img[src*="work-icon3.svg"] {
 .contact-field select:focus,
 .contact-field textarea:focus {
   border-color: var(--ztc-text-text-4);
-  box-shadow: 0 0 0 3px rgba(142, 0, 120, 0.12);
+  box-shadow: 0 0 0 3px rgba(91, 0, 77, 0.12);
 }
 
 .contact-field.is-invalid input,

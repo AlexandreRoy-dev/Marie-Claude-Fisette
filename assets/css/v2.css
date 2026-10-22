@@ -1,5 +1,5 @@
 /* Refonte v2 : plus de magenta, plus de caractère. Couleurs pleines seulement. */
-:root{--mag:#8E0078;--mag-d:#6E005D;--mag-l:#F3D9EE;--dark:#1D1A1C}
+:root{--mag:#5B004D;--mag-d:#3F0035;--mag-l:#F3D9EE;--dark:#1D1A1C}
 h2 em,h1 em{font-style:italic;color:var(--mag)}
 .eyebrow{color:var(--mag)}
 /* boutons magenta */
@@ -68,7 +68,7 @@ h2 em,h1 em{font-style:italic;color:var(--mag)}
 .footer__legal,.footer__legal p{color:#a9a1a6}
 @media (max-width:900px){.hero--mag{padding:40px 0 72px}.steps li{grid-template-columns:80px 1fr}.hero--mag .hero__photo{outline-offset:8px}}
 /* v3 : fonds foncés, magenta en accent. Un seul bandeau magenta plein (engagements). */
-:root{--mag-on-dark:#E254C6}
+:root{--mag-on-dark:#CC77BC}
 .hero--dark{background:var(--dark)}
 .hero--dark h1 em{color:var(--mag-on-dark);font-style:italic}
 .hero--dark .eyebrow{color:var(--mag-on-dark);opacity:1}
@@ -88,3 +88,15 @@ h2 em,h1 em{font-style:italic;color:var(--mag)}
 .section--dark .contact__info a:hover{color:var(--mag-on-dark)}
 .section--dark + .footer{border-top:1px solid #2e292c}
 .footer{border-top:6px solid var(--mag)}
+/* v4 : prune #5B004D, photos avec forme (arche pour les portraits, coins asymétriques pour les photos d'ambiance) */
+.hero__photo,.about__photo,.contact__photo{border-radius:999px 999px 0 0;outline:0!important}
+.hero--dark .hero__photo{box-shadow:24px 24px 0 0 var(--mag)}
+.about__photo,.contact__photo{box-shadow:16px 16px 0 0 var(--mag)}
+.section--dark.section--contact .contact__photo{box-shadow:16px 16px 0 0 var(--mag),16px 16px 0 1px #CC77BC}
+.hero--dark .hero__photo{box-shadow:24px 24px 0 0 var(--mag),24px 24px 0 1px #CC77BC}
+.side-photo{border-radius:56px 56px 56px 0}
+.band__img{border-radius:0 96px 0 0}
+.strip{border-top:0;margin:0 clamp(16px,4vw,64px) 0;border-radius:96px 0 96px 0;height:clamp(240px,30vw,420px)}
+.card{border-radius:0 24px 0 0}
+.section--contact .contact__form{border-radius:0 32px 0 0}
+@media (max-width:900px){.hero--dark .hero__photo{box-shadow:12px 12px 0 0 var(--mag),12px 12px 0 1px #CC77BC;margin-right:12px}.about__photo,.contact__photo,.section--dark.section--contact .contact__photo{box-shadow:10px 10px 0 0 var(--mag);margin-right:10px}.band__img{border-radius:0 0 64px 0}.strip{border-radius:56px 0 56px 0}.side-photo{border-radius:40px 40px 40px 0}}

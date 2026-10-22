@@ -14,4 +14,4 @@ http://localhost:4173/
 
 ## Couleurs
 
-Magenta `#8E0078` / `#5A004C` / `#C200A8` sur fond clair. Titres en phrase, français du Québec (`fr-CA`).
+Prune `#5B004D` / `#3F0035`, teinte claire `#CC77BC` sur fond foncé. Titres en phrase, français du Québec (`fr-CA`).
