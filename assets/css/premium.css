@@ -114,3 +114,5 @@ p{margin:0 0 1em}
 .contact__form{padding:26px 20px}.contact-form__row{grid-template-columns:1fr;gap:0}
 .footer__grid{grid-template-columns:1fr}.lead{font-size:17px}}
 .band__caption p.eyebrow{font:600 12px/1.4 var(--sans);letter-spacing:.16em;margin:0 0 20px}
+.brand__logo{height:50px;width:auto;display:block}
+@media (max-width:900px){.brand__logo{height:40px}}
