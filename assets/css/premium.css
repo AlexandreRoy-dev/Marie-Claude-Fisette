@@ -116,3 +116,24 @@ p{margin:0 0 1em}
 .band__caption p.eyebrow{font:600 12px/1.4 var(--sans);letter-spacing:.16em;margin:0 0 20px}
 .brand__logo{height:50px;width:auto;display:block}
 @media (max-width:900px){.brand__logo{height:40px}}
+
+/* Animations (approuvées). Masquage seulement quand reveal.js est actif. */
+@media (prefers-reduced-motion: no-preference){
+  .reveal-ready [data-reveal]{opacity:0;transition:opacity .8s cubic-bezier(.2,.6,.2,1),transform .8s cubic-bezier(.2,.6,.2,1)}
+  .reveal-ready [data-reveal="up"]{transform:translateY(18px)}
+  .reveal-ready [data-reveal].is-in{opacity:1;transform:none}
+  .hero__text{animation:mcfUp .9s cubic-bezier(.2,.6,.2,1) both}
+  .hero__photo{animation:mcfFade 1.1s ease .15s both}
+  @keyframes mcfUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes mcfFade{from{opacity:0}to{opacity:1}}
+  .btn{transition:background .25s,color .25s,border-color .25s,transform .25s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn--line:hover{background:var(--ink);color:#fff}
+  .btn--solid:hover{background:var(--brand);border-color:var(--brand)}
+  .card{transition:border-color .3s,transform .3s,opacity .8s cubic-bezier(.2,.6,.2,1)}
+  .card.is-in:hover,.card:not([data-reveal]):hover{transform:translateY(-3px)}
+  .card:hover{border-color:#cbbfc6}
+  .hero__photo,.side-photo,.about__photo,.contact__photo,.band__img{overflow:hidden}
+  .hero__photo img,.side-photo img,.about__photo img,.contact__photo img,.band__img img{transition:transform 1.2s cubic-bezier(.2,.6,.2,1)}
+  .hero__photo:hover img,.side-photo:hover img,.about__photo:hover img,.contact__photo:hover img,.band__img:hover img{transform:scale(1.03)}
+}
